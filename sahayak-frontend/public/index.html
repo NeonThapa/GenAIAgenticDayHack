@@ -96,12 +96,12 @@
                 <div class="card" id="assessment-output"><p>Output will appear here.</p></div>
             </section>
 
-            <!-- View: Lesson Planner -->
+            <!-- View: Lesson Planner (SIMPLIFIED) -->
             <section id="view-lesson-planner" class="view hidden">
                 <h2>Lesson Planner</h2>
                 <div class="card">
                     <form id="lesson-plan-form">
-                        <p>Generate a foundational lesson plan and send it to your email and calendar.</p>
+                        <p>Generate a foundational lesson plan for a grade and subject.</p>
                         <div class="form-group">
                             <label for="grade-lp">Grade Level:</label>
                             <input type="text" id="grade-lp" name="grade" placeholder="e.g., 4th Grade" required>
@@ -110,17 +110,14 @@
                             <label for="subject-lp">Subject:</label>
                             <input type="text" id="subject-lp" name="subject" placeholder="e.g., Social Studies" required>
                         </div>
-                        <div class="form-group">
-                            <label for="email-lp">Your Email Address:</label>
-                            <input type="email" id="email-lp" name="email" placeholder="e.g., teacher@school.org" required>
-                        </div>
-                        <button type="submit" class="generate-btn">Generate & Send</button>
+                        <!-- "Chapters" input has been removed -->
+                        <button type="submit" class="generate-btn">Generate Lesson Plan</button>
                     </form>
                 </div>
                 <div class="card" id="lesson-plan-output"><p>Output will appear here.</p></div>
             </section>
 
-            <!-- View: Content Generation (Simplified) -->
+            <!-- View: Content Generation (SIMPLIFIED) -->
             <section id="view-content-generation" class="view hidden">
                 <h2>Content Generation</h2>
                 <div class="card">
@@ -134,6 +131,7 @@
                             <label for="subject-cg">Subject:</label>
                             <input type="text" id="subject-cg" name="subject" placeholder="e.g., Biology" required>
                         </div>
+                        <!-- "Chapter" and "Topic" inputs have been removed -->
                         <button type="submit" class="generate-btn">Generate Content</button>
                     </form>
                 </div>
@@ -147,7 +145,14 @@
     <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-auth-compat.js"></script>
     <script>
-      const firebaseConfig = { /* PASTE YOUR FIREBASE CONFIG OBJECT HERE */ };
+      const firebaseConfig = {
+  apiKey: "AIzaSyDxUJLsi68oRsIxGYl_YJovZJbNl8VXGm8",
+  authDomain: "sahayak-agent-e66a0.firebaseapp.com",
+  projectId: "sahayak-agent-e66a0",
+  storageBucket: "sahayak-agent-e66a0.firebasestorage.app",
+  messagingSenderId: "446847319599",
+  appId: "1:446847319599:web:febc7ce549365c9816d0da"
+};
       firebase.initializeApp(firebaseConfig);
     </script>
     <script src="app.js"></script>
