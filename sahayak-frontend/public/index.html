@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shiksha AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <span class="material-icons logo-icon">school</span>
+                <h1>Shiksha AI</h1>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#" class="nav-link active" data-view="dashboard"><span class="material-icons">dashboard</span> Dashboard</a></li>
+                    <li><a href="#" class="nav-link" data-view="worksheet-generator"><span class="material-icons">description</span> Worksheet Generator</a></li>
+                    <li><a href="#" class="nav-link" data-view="assessment-creator"><span class="material-icons">quiz</span> Assessment Creator</a></li>
+                    <li><a href="#" class="nav-link" data-view="lesson-planner"><span class="material-icons">event_note</span> Lesson Planner</a></li>
+                    <li><a href="#" class="nav-link" data-view="content-generation"><span class="material-icons">auto_awesome</span> Content Generation</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="user-avatar">N</div>
+                    <div class="user-info">
+                        <span class="user-name">Teacher</span>
+                        <span class="user-email">teacher@school.org</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <div id="auth-container"></div>
+            </header>
+
+            <!-- View: Dashboard -->
+            <section id="view-dashboard" class="view active">
+                <div class="welcome-banner">
+                    <h2>Welcome to Shiksha AI</h2>
+                    <p>Your AI-powered teaching companion. Select a tool to get started.</p>
+                </div>
+                <div class="tool-grid">
+                    <div class="tool-card" data-view="worksheet-generator"><span class="material-icons">description</span><h3>Worksheet Generator</h3><p>Create worksheets for different grades from an image.</p></div>
+                    <div class="tool-card" data-view="assessment-creator"><span class="material-icons">quiz</span><h3>Assessment Creator</h3><p>Instantly generate quizzes and tests.</p></div>
+                    <div class="tool-card" data-view="lesson-planner"><span class="material-icons">event_note</span><h3>Lesson & Content Planner</h3><p>Automate lesson planning and schedule content delivery.</p></div>
+                    <div class="tool-card" data-view="content-generation"><span class="material-icons">auto_awesome</span><h3>Content Generation</h3><p>Generate images and creative content for learners.</p></div>
+                </div>
+            </section>
+
+            <!-- View: Worksheet Generator -->
+            <section id="view-worksheet-generator" class="view hidden">
+                <h2>Worksheet Generator</h2>
+                <div class="card">
+                    <form id="worksheet-form">
+                        <p>Upload a worksheet of one grade, and select the grade to which it should be converted.</p>
+                        <div class="form-group">
+                            <label for="worksheet-file">Upload Original Worksheet:</label>
+                            <div class="file-input-wrapper"><button type="button" class="file-btn">Choose File</button><span class="file-name">No file selected</span></div>
+                            <input type="file" id="worksheet-file" name="worksheetFile" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="target-grade-ws">Target Grade Level:</label>
+                            <input type="text" id="target-grade-ws" name="targetGrade" placeholder="e.g., 2nd Grade" required>
+                        </div>
+                        <button type="submit" class="generate-btn">Generate Worksheet</button>
+                    </form>
+                </div>
+                <div class="card" id="worksheet-output"><p>Output will appear here.</p></div>
+            </section>
+
+            <!-- View: Assessment Creator -->
+            <section id="view-assessment-creator" class="view hidden">
+                <h2>Assessment Creator</h2>
+                <div class="card">
+                    <form id="assessment-form">
+                        <div class="form-group">
+                            <label for="grade-ac">Grade Level:</label>
+                            <input type="text" id="grade-ac" name="grade" placeholder="e.g., 8th Grade" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject-ac">Subject:</label>
+                            <input type="text" id="subject-ac" name="subject" placeholder="e.g., Science" required>
+                        </div>
+                        <button type="submit" class="generate-btn">Generate Assessment</button>
+                    </form>
+                </div>
+                <div class="card" id="assessment-output"><p>Output will appear here.</p></div>
+            </section>
+
+            <!-- View: Lesson Planner -->
+            <section id="view-lesson-planner" class="view hidden">
+                <h2>Lesson Planner</h2>
+                <div class="card">
+                    <form id="lesson-plan-form">
+                        <p>Generate a foundational lesson plan and send it to your email and calendar.</p>
+                        <div class="form-group">
+                            <label for="grade-lp">Grade Level:</label>
+                            <input type="text" id="grade-lp" name="grade" placeholder="e.g., 4th Grade" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject-lp">Subject:</label>
+                            <input type="text" id="subject-lp" name="subject" placeholder="e.g., Social Studies" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email-lp">Your Email Address:</label>
+                            <input type="email" id="email-lp" name="email" placeholder="e.g., teacher@school.org" required>
+                        </div>
+                        <button type="submit" class="generate-btn">Generate & Send</button>
+                    </form>
+                </div>
+                <div class="card" id="lesson-plan-output"><p>Output will appear here.</p></div>
+            </section>
+
+            <!-- View: Content Generation (Simplified) -->
+            <section id="view-content-generation" class="view hidden">
+                <h2>Content Generation</h2>
+                <div class="card">
+                    <form id="content-gen-form">
+                        <p>Generate creative images and text for a grade and subject.</p>
+                        <div class="form-group">
+                            <label for="grade-cg">Grade Level:</label>
+                            <input type="text" id="grade-cg" name="grade" placeholder="e.g., 6th Grade" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject-cg">Subject:</label>
+                            <input type="text" id="subject-cg" name="subject" placeholder="e.g., Biology" required>
+                        </div>
+                        <button type="submit" class="generate-btn">Generate Content</button>
+                    </form>
+                </div>
+                <div class="card" id="content-gen-output"><p>Output will appear here.</p></div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-auth-compat.js"></script>
+    <script>
+      const firebaseConfig = { /* PASTE YOUR FIREBASE CONFIG OBJECT HERE */ };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>
