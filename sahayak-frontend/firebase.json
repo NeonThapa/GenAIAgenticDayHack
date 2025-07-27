@@ -1,19 +1,16 @@
 {
-  "hosting": [
-    {
-      "target": "sahayak-frontend",
-      "public": "sahayak-frontend/public",
-      "rewrites": [
-        {
-          "source": "**",
-          "app": "agile1"
-        }
-      ]
-    }
-  ],
-  "apphosting": {
-    "source": "sahayak-backend",
-    "project": "sahayak-agent-e66a0",
-    "location": "us-central1"
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
   }
 }
