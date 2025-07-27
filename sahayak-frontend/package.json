@@ -1,0 +1,8 @@
+{
+  "name": "sahayak-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "echo 'Build step complete. Files are in the public directory.'"
+  }
+}
