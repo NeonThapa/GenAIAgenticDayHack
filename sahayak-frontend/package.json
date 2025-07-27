@@ -4,5 +4,8 @@
   "private": true,
   "scripts": {
     "build": "echo 'Build step complete. Files are in the public directory.'"
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
   }
 }
