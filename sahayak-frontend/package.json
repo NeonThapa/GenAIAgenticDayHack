@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "echo 'Build step complete. Files are in the public directory.'"
+    "build": "mkdir -p dist && cp -r public/* dist/",
+    "start": "serve -s dist"
   },
   "dependencies": {
     "serve": "^14.2.0"
