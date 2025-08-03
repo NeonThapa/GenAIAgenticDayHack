@@ -1,5 +1,5 @@
-# sahayak-backend/main.py (Final Version with Gemini 1.5 Flash)
-# Triggering a new build
+# sahayak-backend/main.py (Final Stable Version for App Hosting)
+
 import functions_framework
 import vertexai
 from vertexai.generative_models import GenerativeModel, Part
@@ -12,13 +12,13 @@ import sys
 import json
 
 try:
-    print("Initializing clients...")
+    print("Initializing clients with the latest models...")
     vertexai.init()
     db = firestore.Client()
     embedding_model = TextEmbeddingModel.from_pretrained("text-embedding-004")
-    # Using the fast and cost-effective Gemini 1.5 Flash model for all generation
-    generation_model = GenerativeModel("gemini-2.5-flash") 
-    image_generation_model = ImageGenerationModel.from_pretrained("imagen-3.0-fast-generate-001")
+    # --- USING YOUR REQUESTED LATEST MODELS ---
+    generation_model = GenerativeModel("gemini-1.5-flash-preview-0514") 
+    image_generation_model = ImageGenerationModel.from_pretrained("imagen-3.0-generate-001")
     print("SUCCESS: All clients initialized.")
 except Exception as e:
     print(f"CRITICAL STARTUP ERROR: {e}", file=sys.stderr)

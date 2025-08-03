@@ -1,0 +1,7 @@
+# Firebase and Cloud Functions libraries
+firebase-functions
+firebase-admin
+
+# Google Cloud and Vertex AI libraries
+google-cloud-aiplatform
+google-cloud-firestore
